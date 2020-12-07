@@ -27,3 +27,4 @@ echo 'Iniciando o programa principal' . PHP_EOL;
 funcao1();
 echo 'Finalizando o programa principal' . PHP_EOL;
 echo 'Finalizando' . PHP_EOL;
+echo 'Finalizando' . PHP_EOL;
