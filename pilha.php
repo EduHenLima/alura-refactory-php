@@ -6,6 +6,7 @@ function funcao1()
         echo 'Entrei na função 1' . PHP_EOL;
         funcao2();
     } catch (RuntimeException | DivisionByZeroError $e){ // utilizando multi-catch
+        throw new \http\Exception\RuntimeException( 'Deu pau na bagaça',1 ,$e) ;
         echo $e->getMessage() . PHP_EOL; // Retornando o erro viavel tento da exception
         echo $e->getLine() . PHP_EOL; // Qual linha estorou o erro;
         echo $e->getTraceAsString() . PHP_EOL; // Pilha de execução para chegar no mesmo
@@ -14,12 +15,9 @@ function funcao1()
 
 function funcao2()
 {
-    $int = intdiv(6,0);
-    $teste = new SplFixedArray(1);
-    echo 'Entrei na função 2' . PHP_EOL;
-    echo $teste[2] = 'valor';
-    echo 'Entrei na função 1' . PHP_EOL;
-
+    echo 'Entrei da função 2' . PHP_EOL;
+    $exception = new RuntimeException();
+    throw $exception;
     echo 'Saindo da função 2' . PHP_EOL;
 }
 
